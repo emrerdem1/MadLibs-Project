@@ -92,7 +92,14 @@ section {
 	position: relative;
 	z-index: 11;
 }
-
+.madLibsEdit .forStory::before {
+	content: "?";
+	position: absolute;
+	width: 200px;
+	height: 150px;
+	left: 200px;
+	background-image: linear-gradient(130deg, rgb(28, 184, 158), rgb(20, 148, 165)), url(/images/read.svg);
+}
 footer {
 	background-image: var(--footer);
 	display: flex;
