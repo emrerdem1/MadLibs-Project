@@ -24,6 +24,10 @@ body {
     background-image: linear-gradient(45deg, #1d3264, #182848);
     animeation-name: fadein;
 }
+.texT img{
+  width: 200px;
+  margin: 0 auto;
+}
  #title-total{
    display:flex;
    justify-content: space-between;
@@ -77,8 +81,8 @@ body {
   width: 60%;
   height: 90%;
    border-radius: 30px;
-  border: 1px solid purple;
-  background-color:purple;
+  border: 1px solid #dfbf9f;
+  background-color:#dfbf9f;
 }
 
   footer{
