@@ -1,3 +1,44 @@
+//hotkeys, second assignment
+let blankSpaces = document.querySelectorAll(".inputs");
+let inputCount;
+document.addEventListener("keydown", function(e){
+  for(let i=0; i < blankSpaces.length; i++) {
+    blankSpaces[i].index = i;
+    inputCount = parseInt(e.target.index);
+   
+  }
+
+  if(e.key === "Enter"){
+    if(inputCount>=blankSpaces.length-1){
+      inputCount=-1;
+    }
+    blankSpaces[++inputCount].focus();
+  } 
+
+});
+//-------------------------------------------------------\\
+//live update, forth assignment
+function set(el,text){
+ while(el.firstChild)el.removeChild(el.firstChild);
+ el.appendChild(document.createTextNode(text))}
+ 
+function setupUpdater(){
+ let input=document.getElementsByTagName('input')[0], orig=document.getElementById('original'),
+           oldText=input.value, timeout=null;
+  function handleChange(){
+  let newText=input.value;
+  if (newText==oldText) return; else oldText=newText;
+  set(orig, newText);
+ }
+ function eventHandler(){
+  if(timeout) clearTimeout(timeout);
+  timeout=setTimeout(handleChange, 50);
+ }
+  input.onkeydown=input.onkeyup=input.onclick=eventHandler;
+}
+setupUpdater();
+document.getElementsByTagName('input')[0].focus();
+//-------------------------------------------------------\\
 /**
  * Complete the implementation of parseStory.
  * 
@@ -40,3 +81,6 @@ function parseStory(rawStory) {
 getRawStory().then(parseStory).then((processedStory) => {
   console.log(processedStory);
 });
+
+//:enabled 	input:enabled 	Selects every enabled <input> element
+//focus 	The event occurs when an element gets focus
