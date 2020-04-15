@@ -1,142 +1,155 @@
-
-
- * {
-   margin: 0;
-   box-sizing: border-box;
-   font-weight: normal;
-   font-family: monaco,Consolas,Lucida Console,monospace;
-
- }
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-weight: normal;
+	font-family: monaco, Consolas, Lucida Console, monospace;
+}
 body {
-  height: 100vh;
-  color: white;
-   background-image: linear-gradient(45deg, #4b6cb7, #182848);
+	height: 100vh;
+	color: white;
+	background-image: linear-gradient(45deg, #4b6cb7, #182848);
 }
- .navbar {
-    padding: 0px 30px;
-    display: flex;
-    justify-content: space-evenly;
-    //position: fixed;
-    position: relative;
-    align-items: center;
-    width: 100vw;
-    height: 15%;
-    background-image: linear-gradient(45deg, #1d3264, #182848);
-    animeation-name: fadein;
+.navbar {
+	padding: 0px 30px;
+	display: flex;
+	justify-content: space-evenly;
+	//position: fixed;
+	position: relative;
+	align-items: center;
+	width: 100vw;
+	height: 15%;
+	background-image: linear-gradient(45deg, #1d3264, #182848);
+	animeation-name: fadein;
 }
-.texT img{
-  width: 200px;
-  margin: 0 auto;
+.texT img {
+	width: 200px;
+	margin: 0 auto;
 }
- #title-total{
-   display:flex;
-   justify-content: space-between;
-   font-style:italic;
-   width: 30%;
- }
- #game-title {
-  padding-left: 20px;
- }
- #game-sum{
-   width:70%;
-   display: flex;
-   flex-direction: row-reverse;
- }
- #game-sum p{
-   text-align:center;
- }
-
-.allParas{
-  height: 75%;
+#title-total {
+	display: flex;
+	justify-content: space-between;
+	font-style: italic;
+	width: 30%;
 }
-.madLibsEdit{
-  height: 50%;
-  display: flex;
- }
- .madLibsPreview{
-  height: 50%;
-  display: flex;
-  flex-direction: row-reverse;
-
- }
-.texT{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+#game-title {
+	padding-left: 20px;
 }
-.texT p{
-
+#game-sum {
+	width: 70%;
+	display: flex;
+	flex-direction: row-reverse;
 }
-.forImg{
-  width: 30%;
-  height: 90%;
-}
-#github{
-  display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: row;
-}
-.forStory{
-  width: 60%;
-  height: 90%;
-   border-radius: 30px;
-  border: 1px solid #dfbf9f;
-  background-color:#dfbf9f;
+#game-sum p {
+	text-align: center;
 }
 
-  footer{
-    background-image: linear-gradient(45deg, #1d3264, #182848);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: auto;
-  }
+.allParas {
+	height: 75%;
+}
+.madLibsEdit {
+	height: 50%;
+	display: flex;
+}
+.madLibsPreview {
+	height: 50%;
+	display: flex;
+	flex-direction: row-reverse;
+}
+.texT {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.texT p {
+}
+.forImg {
+	width: 30%;
+	height: 90%;
+}
+#github {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	position: absolute;
+	margin-top: 15px;
+}
+
+.forStory {
+	width: 60%;
+	height: 90%;
+	border-radius: 30px;
+	border: 1px solid #dfbf9f;
+	background-color: #dfbf9f;
+}
+
+footer {
+	background-image: linear-gradient(45deg, #1d3264, #182848);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	position: relative;
+}
 footer img {
-    width: 26px;
-    margin: 10px;
-    }
-  footer h3 {
-    margin-top: 25px;
-    font-size: 80%;
-  }
-  footer br {
-    display:none;
-  }
-@media only screen and (max-width: 910px) {
-  .texT{
-   flex-direction: column;
-  }
-  .forImg{
-    margin-top: 10px;
-  }
-  .forStory{
-    width: 90%;
-   margin-bottom: 10px;
-  }
+	width: 26px;
+	margin: 10px;
 }
-@media only screen and (max-width: 510px){
-  .navbar{
-    flex-direction: column;
-    height: auto;
-    padding-bottom: 10px;
-  }
-  #title-total{
-    width:  90%;
-
-  }
-  #game-sum p{
-    width:100%;
-  }
-  footer {
-    padding-top: 10px;
-  }
-  footer h3{
-    text-align: center;
-    margin: 0 auto;
-  }
-  br {
-    display: block;
-  }
+footer h3 {
+	font-size: 80%;
+}
+footer br {
+	display: none;
+}
+@media only screen and (max-width: 910px) {
+	.texT {
+		flex-direction: column;
+	}
+	.forImg {
+		margin-top: 10px;
+	}
+	.forStory {
+		width: 90%;
+		margin-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 510px) {
+	.navbar {
+		flex-direction: column;
+		height: auto;
+		padding-bottom: 10px;
+	}
+	#title-total {
+		width: 90%;
+	}
+	#game-sum p {
+		width: 100%;
+	}
+	footer {
+		height: 100px;
+	}
+	footer h3 {
+		text-align: center;
+		margin: 0 auto;
+	}
+	br {
+		display: block !important;
+	}
+	#github {
+		margin-top: 20px;
+	}
+}
+#particles-js {
+	width: 100%;
+	height: 100%;
+	background-color: #1b191ad8;
+	background-image: url('');
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+#recoded {
+	position: absolute;
+	align-self: flex-start;
+	margin-top: 15px;
 }
