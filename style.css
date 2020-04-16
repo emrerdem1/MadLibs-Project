@@ -4,13 +4,11 @@
 	font-weight: normal;
 	font-family: monaco, Consolas, Lucida Console, monospace;
 }
-p {
-  color: red !important;
-}
+
 :root {
-	--mid2: rgb(54, 54, 139);
+	--mid2:rgb(250,250,250);
 	--nav: linear-gradient(45deg, #1d3264, #182848);
-	--body: linear-gradient(45deg, #4b6cb7, #182848);
+	--body: #ffffff;
 	--footer: linear-gradient(45deg, #4b6cb7, #182848);
 }
 body {
@@ -62,6 +60,13 @@ section {
 .madLibsEdit {
 	height: 45%;
 	display: flex;
+  
+}
+.madLibsEdit .forStory{
+   box-shadow: 10px 10px 5px grey;
+}
+.madLibsPreview .forStory{
+   box-shadow: -10px 10px 5px grey;
 }
 .madLibsPreview {
 	height: 45%;
@@ -76,7 +81,6 @@ section {
 }
 .forImg {
 	width: 30%;
-	//height: 90%;
 	position: relative;
 	z-index: 11;
 	display: flex;
@@ -96,11 +100,12 @@ section {
 .forStory {
 	width: 60%;
 	height: 90%;
-	border-radius: 30px;
-	border: 1px solid #dfbf9f;
-	background-color: #dfbf9f;
+	border-radius: 3px;
+	border: 10px ridge #0d0d54d8;
+	background-color:rgb(255,255,255);
 	position: relative;
 	z-index: 11;
+ 
 }
 /*.madLibsEdit .forStory::before {
 	content: "?";
@@ -134,7 +139,7 @@ footer br {
 #particles-js {
 	width: 100%;
 	height: 100%;
-	background-color: #1b191ad8;
+	background-color: #060635d8;
 	background-image: url('');
 	background-size: cover;
 	background-position: 50% 50%;
@@ -184,8 +189,20 @@ footer br {
 	.madLibsPreview {
 		flex-direction: column-reverse;
 	}
+  .madLibsEdit .forStory{
+   box-shadow: 10px 10px 5px grey;
+}
+.madLibsPreview .forStory{
+   box-shadow: 10px 10px 5px grey;
+}
 }
 @media only screen and (max-width: 570px) {
+  .madLibsEdit .forStory{
+   box-shadow: 10px 10px 5px grey;
+}
+.madLibsPreview .forStory{
+   box-shadow: 10px 10px 5px grey;
+}
 	.navbar {
 		flex-direction: column;
 		height: auto;
