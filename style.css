@@ -85,7 +85,6 @@ section {
 	z-index: 11;
 	display: flex;
 	justify-content: center;
-	width: 120px;
 	height: auto;
 }
 #github {
@@ -105,7 +104,15 @@ section {
 	background-color:rgb(255,255,255);
 	position: relative;
 	z-index: 11;
- 
+  color: black;
+  overflow: auto;
+}
+
+.forStory p{
+  padding: 10px 25px;
+  overflow-wrap: break-word;
+  text-align: justify;  
+
 }
 /*.madLibsEdit .forStory::before {
 	content: "?";
@@ -169,6 +176,7 @@ footer br {
 	left: 50%;
 	transform: skew(0, -20deg);
 }
+
 @media only screen and (max-width: 910px) {
 	.texT {
 		flex-direction: column;
