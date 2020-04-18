@@ -1,32 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
     //hotkeys, second assignment
     let blankSpaces = document.querySelectorAll(".inputs");
-    let inputCount;
+   
     document.addEventListener("keydown", function(e){
-      for(let i=0; i < blankSpaces.length; i++) {
-        blankSpaces[i].index = i;
-        inputCount = parseInt(e.target.index);
-
-      }
-
+   
       if(e.key === "Enter"){
         console.log("entered");
-        if(inputCount>=blankSpaces.length-1){
-          inputCount=-1;
-        }
-        blankSpaces[++inputCount].focus();
-      }
+         if(document.activeElement === document.querySelectorAll(".inputs")[document.querySelectorAll(".inputs").length-1]){
+          document.querySelector(".inputs").focus();
+        }else
+        {document.activeElement.nextElementSibling.focus();}
+        
+       
+      } 
 
     });
   //-------------------------------------------------------\\
   });
 
-//live update, forth assignment
+//live update, forth assignment 
 /*
 function setupUpdater(){
  let inputOne=document.getElementsByTagName('input')[0];
  let divPreview=document.getElementsByClassName('forStory')[1];
-
+ 
  let oldText=inputOne.value;
  let timeout=null;
   function handleChange(){
@@ -53,19 +50,19 @@ function set(el,text){
 
 
 
-/*
+/* 
  * parseStory retrieves the story as a single string from story.txt
  * (I have written this part for you).
- *
+ * 
  * In your code, you are required (please read this carefully):
  * - to return a list of objects
  * - each object should definitely have a field, `word`
  * - each object should maybe have a field, `pos` (part of speech)
- *
+ * 
  * So for example, the return value of this for the example story.txt
  * will be an object that looks like so (note the comma! periods should
  * be handled in the same way).
- *
+ * 
  * Input: "Louis[n] went[v] to the store[n], and it was fun[a]."
  * Output: [
  *  { word: "Louis", pos: "noun" },
@@ -74,13 +71,13 @@ function set(el,text){
  *  { word: "the", },
  *  { word: "store", pos: "noun" }
  *  { word: "," }
- *
+ *  
  */
 
 
 function parseStory(rawStory) {
   let madLibsAll = [];
-
+  
 let re =/([.,]|\b\w+\[(n|v|a|adv)\]|\b\w+\b)/g;
 let items = rawStory.match(re);
 
@@ -93,19 +90,19 @@ for(let i = 0; i<items.length;i++){
   let objecT = {};
   if(reForPunctuation.test(items[i])){
    madLibsAll.push(createObjectWord(objecT, items[i]));
-
+   
   }
   else if(reForMadLibz.test(items[i])){
     if(items[i].includes("[n]")){
-      let item= items[i].substring(0, items[i].length-3);
+      let item= items[i].substring(0, items[i].length-3); 
       madLibsAll.push(createObjectWordAndPOS(objecT, item, "noun"));
     }
     else if(items[i].includes("[v]")){
-      let item= items[i].substring(0, items[i].length-3);
+      let item= items[i].substring(0, items[i].length-3); 
       madLibsAll.push(createObjectWordAndPOS(objecT, item, "verb" ));
     }
     else if(items[i].includes("[a]")){
-      let item= items[i].substring(0, items[i].length-3);
+      let item= items[i].substring(0, items[i].length-3); 
       madLibsAll.push(createObjectWordAndPOS(objecT, item,"adjective" ));
     }
     else{
@@ -142,54 +139,48 @@ function createObjectWordAndPOS(obj, wordVal, posVal){
 
 
 getRawStory().then(parseStory).then((processedStory) => {
-//hikayeyi forma dönüiştürmetliy, inputlar ve paragraf içleri
     let edit = document.getElementsByClassName("forStory")[0];
     let preview=document.getElementsByClassName("forStory")[1];
     let p1 = document.createElement("p");
     let p2 = document.createElement("p");
     edit.appendChild(p1);
     preview.appendChild(p2);
-
+  
     var pEdit = document.querySelector(".forStory").getElementsByTagName("p")[0];
-
+    var pPreview = document.querySelectorAll(".forStory")[1].getElementsByTagName("p")[0];
+    
+    
+  
   for(let i =0;i<processedStory.length;i++){
 
-
+    
     if(processedStory[i].pos==="adjective"|| processedStory[i].pos==="noun" ||processedStory[i].pos==="verb"){
-
+       
       let val = processedStory[i].word;
-      pEdit.innerHTML+=` <input class = "inputs" type="text" value = ${val}>`;
-
+      pEdit.innerHTML+=` <input class = "inputs" maxlength="20" type="text" placeholder = ${val}  maxlength="20">`;
+      pPreview.innerHTML+= " "+val;
+  
     }
     else if(processedStory[i].word==="."|| processedStory[i].word===","){
-
+        
         let val = processedStory[i].word;
         pEdit.appendChild(document.createTextNode(val));
-        document.querySelector(".forStory").appendChild(pEdit);
+        pPreview.appendChild(document.createTextNode(val));
+        edit.appendChild(pEdit);
+        preview.appendChild(pPreview);     
 
+      
     }
     else{
-
-      //console.log("maybe?!?!??")
        let val = processedStory[i].word;
       pEdit.appendChild(document.createTextNode(" "+val));
-      document.querySelector(".forStory").appendChild(pEdit);
+      pPreview.appendChild(document.createTextNode(" "+ val));
+      edit.appendChild(pEdit);
+      preview.appendChild(pPreview);
     }
 
 
 
-
+    
   }
-  /*
-let entry = document.createElement("p");
-entry.appendChild(document.createTextNode(içerik));
-document.getElementById("solution").appendChild(entry);
-*/
-
-
-
-  console.log(processedStory);
 });
-
-//:enabled 	input:enabled 	Selects every enabled <input> element
-//focus 	The event occurs when an element gets focus
