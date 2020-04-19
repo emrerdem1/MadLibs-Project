@@ -262,8 +262,8 @@ footer br {
 }
 input {
   padding: 2px;
-  width: 90px;
-  //transition: width 1s ease-in-out;
+  width: 85px;
+  transition: width 1s ease-in-out;
 }
 /*regarding inputs*/
 ::placeholder {
@@ -279,6 +279,7 @@ input:placeholder-shown {
   background-image: linear-gradient(62deg, lightgrey 0%,darkgrey, 100%); 
 }
 input:focus {
+  width: 95px;
   border-color: #0d5425;
   box-shadow: 0px 0px 18px 3px #0d5425;
 }
