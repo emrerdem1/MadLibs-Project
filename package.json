@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:emrerdem1/MadLibs-Project.git",
   "author": "emrerdem1 <emrerdem94@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "yarn": "^1.22.5"
+  }
 }
