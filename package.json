@@ -1,0 +1,8 @@
+{
+  "name": "MadLibs-Project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:emrerdem1/MadLibs-Project.git",
+  "author": "emrerdem1 <emrerdem94@gmail.com>",
+  "license": "MIT"
+}
